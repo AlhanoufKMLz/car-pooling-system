@@ -5,14 +5,13 @@ public class Route {
 
     //constructor
     public Route(String pickUpAddress, String destinationAddress, double tripPrice) throws IllegalArgumentException{
-        if (tripPrice <= 0) throw new IllegalArgumentException("Trip Price must be positive");
+        if (tripPrice < 0) throw new IllegalArgumentException("Trip Price must be positive");
         this.pickUpAddress = pickUpAddress;
         this.destinationAddress = destinationAddress;
         this.tripPrice = tripPrice;
     }
 
     //Extra methods
-
     @Override
     public String toString() {
         return pickUpAddress + " → " + destinationAddress + " ("  + tripPrice + " SR)";

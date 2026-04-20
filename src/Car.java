@@ -5,9 +5,19 @@ public class Car {
 
     //constructor
     public Car(String code, int maxCapacity, Route route) throws IllegalArgumentException{
-        if (maxCapacity <= 0) throw new IllegalArgumentException("Capacity must be positive");
+        if (maxCapacity < 0) throw new IllegalArgumentException("Capacity must be positive");
         this.code = code;
         this.maxCapacity = maxCapacity;
         this.route = route;
+    }
+
+    //Extra methods
+    public boolean isFull(){
+        return maxCapacity == 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Car " + code + " | " + route.toString() + " | Seats left: " + maxCapacity;
     }
 }

@@ -9,8 +9,7 @@ public class Subscribers extends Passenger {
     //methods
     @Override
     public void reserveCar(Car car) throws Exception {
-        if (car.maxCapacity == 0)
-            throw new Exception("Sorry.. this car is full!");
+        if (car.isFull()) throw new Exception("Sorry.. this car is full!");
 
         super.setReservedCar(car);
         car.maxCapacity--;
@@ -19,13 +18,13 @@ public class Subscribers extends Passenger {
 
     @Override
     public void displayInfo() throws Exception {
-        if (super.getReservedCar() == null) throw new Exception("This passenger is not reserved in any trip!");
+        if (super.hasNoReservation()) throw new Exception("The passenger " + super.getName() + " has no reservation!");
 
         System.out.println(super.getReservedCar().route + "\n" +
-                "Passenger Name: " + super.getName() + "\n" +
-                "Passenger Id: " + super.getId() + "\n" +
-                "Passenger Type: Subscriber \n" +
-                "Reserved Car Code: " + super.getReservedCar().code + "\n" +
-                "Route Price: \u001B[9m" + (super.getReservedCar().route.tripPrice) + "SR\u001B[0m " + super.getTripCost() + "SR");
+                "   * Passenger Name: " + super.getName() + "\n" +
+                "   * Passenger Id: " + super.getId() + "\n" +
+                "   * Passenger Type: Subscriber \n" +
+                "   * Reserved Car Code: " + super.getReservedCar().code + "\n" +
+                "   * Route Price: \u001B[9m" + (super.getReservedCar().route.tripPrice) + "SR\u001B[0m " + super.getTripCost() + "SR");
     }
 }
