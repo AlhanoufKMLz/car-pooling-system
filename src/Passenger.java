@@ -6,11 +6,9 @@ public abstract class Passenger {
 
 
     //constructor
-    public Passenger(String name, String id, Car reservedCar, double tripCost) {
+    public Passenger(String name, String id) {
         this.name = name;
         this.id = id;
-        this.reservedCar = reservedCar;
-        this.tripCost = tripCost;
     }
 
 
@@ -49,7 +47,7 @@ public abstract class Passenger {
 
 
     //Extra methods
-    public abstract double reserveCar(Car car) throws Exception;
+    public abstract void reserveCar(Car car) throws Exception;
 
-    public abstract void displayInfo();
+    public abstract void displayInfo() throws Exception;
 }
