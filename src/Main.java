@@ -63,5 +63,23 @@ public class Main {
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
+        System.out.println("------------");
+
+        try {
+            passengers[1].cancelReservation(); //cancel reservation
+            passengers[1].displayInfo(); //try to display info > an exception should be thrown
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("------------");
+
+        try {
+            passengers[1].cancelReservation(); //try to cancel reservation for passenger who doesn't have any reservation > an exception should be thrown
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+        System.out.println("------------");
+
+
     }
 }

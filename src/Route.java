@@ -10,4 +10,11 @@ public class Route {
         this.destinationAddress = destinationAddress;
         this.tripPrice = tripPrice;
     }
+
+    //Extra methods
+
+    @Override
+    public String toString() {
+        return pickUpAddress + " → " + destinationAddress + " ("  + tripPrice + " SR)";
+    }
 }

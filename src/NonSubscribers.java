@@ -33,7 +33,8 @@ public class NonSubscribers extends Passenger{
     public void displayInfo() throws Exception{
         if(super.getReservedCar() == null) throw new Exception("This passenger is not reserved in any trip!");
 
-        System.out.println("Passenger Name: " + super.getName() + "\n" +
+        System.out.println( super.getReservedCar().route + "\n" +
+                            "Passenger Name: " + super.getName() + "\n" +
                             "Passenger Id: " + super.getId() + "\n" +
                             "Passenger Type: Non-Subscriber \n" +
                             "Reserved Car Code: " + super.getReservedCar().code + "\n" +

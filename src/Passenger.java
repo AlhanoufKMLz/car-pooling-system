@@ -46,8 +46,17 @@ public abstract class Passenger {
     }
 
 
-    //Extra methods
+    //methods
     public abstract void reserveCar(Car car) throws Exception;
 
     public abstract void displayInfo() throws Exception;
+
+    //Extra methods
+    public void cancelReservation() throws Exception {
+        if(this.reservedCar == null) throw new Exception("There is no reservation to cancel!");
+
+        reservedCar.maxCapacity--;
+        reservedCar = null;
+        tripCost = 0;
+    }
 }
