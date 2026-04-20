@@ -35,6 +35,7 @@ public class NonSubscribers extends Passenger{
 
         System.out.println("Passenger Name: " + super.getName() + "\n" +
                             "Passenger Id: " + super.getId() + "\n" +
+                            "Passenger Type: Non-Subscriber \n" +
                             "Reserved Car Code: " + super.getReservedCar().code + "\n" +
                             "Route Price: " + (discount ? "\u001B[9m" + (super.getReservedCar().route.tripPrice) + "SR\u001B[0m " : "" )+ super.getTripCost() + "SR");
     }

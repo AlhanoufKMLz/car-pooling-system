@@ -1,7 +1,7 @@
 public class Car {
     protected String code;
     protected int maxCapacity;
-    protected Route route;
+    protected final Route route;
 
     //constructor
     public Car(String code, int maxCapacity, Route route) throws IllegalArgumentException{
